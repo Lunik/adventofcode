@@ -1,5 +1,5 @@
 # 2020/01
 
 ```shell
-$ python3 main.yml
+$ python3 part1.yml
 ```
