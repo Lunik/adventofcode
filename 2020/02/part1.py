@@ -1,4 +1,3 @@
-import sys
 
 def parsePolicy(string):
   data = string.split(' ')
