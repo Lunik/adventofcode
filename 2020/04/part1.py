@@ -5,12 +5,12 @@ def parseAttr(attr):
 def parsePassport(line):
   attrs = line.replace('\n', ' ').split(' ')
 
-  return dict(list(map(parseAttr, attrs)))
+  return dict(map(parseAttr, attrs))
 
 def parseFile(data):
   lines = data.strip().split('\n\n')
 
-  return list(map(parsePassport, lines))
+  return map(parsePassport, lines)
 
 def isValid(required_attr, ignore_attr, passport):
   require_diff = set(required_attr) ^ set(passport.keys())

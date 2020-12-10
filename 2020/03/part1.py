@@ -12,7 +12,7 @@ def printMap(the_map):
     count += 1
 
 def parseLine(line):
-  return list(line.strip())
+  return line.strip()
 
 def isTree(case):
   return case == "#"

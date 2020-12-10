@@ -1,13 +1,13 @@
 from functools import reduce
 
 def parseGroups(data):
-  return list(map(
+  return map(
     lambda g: reduce(               # Map for each groups
       lambda a, b: set(a) & set(b), # Calculate intersection of all answers by groups
-      list(filter(
+      filter(
         lambda r: r != '',          # Removing empty line wich can distort intersection caclulation
-        g.split('\n')))),
-    data.split('\n\n')))
+        g.split('\n'))),
+    data.split('\n\n'))
 
 def verify(groups):
   return reduce(
