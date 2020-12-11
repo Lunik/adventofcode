@@ -1,5 +1,3 @@
-from itertools import product
-
 from part1 import findInvalidNumber
 
 def findSumMatch(sum_count, sum_to_find, sequence):
