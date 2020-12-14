@@ -5,6 +5,9 @@ language: python
 install:
   - pip install -r requirements.txt
 
-script:
-  - PYTHONPATH=".:$PYTHONPATH" pytest -v -n 4
-  - PYTHONPATH=".:$PYTHONPATH" pylint
+jobs:
+  include:
+    - stage: "pylint"
+      script: PYTHONPATH=".:$PYTHONPATH" pylint
+    - stage: "pytest - 2020"
+      script: PYTHONPATH=".:$PYTHONPATH" pytest -v -n 4 adventofcode/tests/y2020
