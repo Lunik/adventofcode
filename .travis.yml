@@ -7,7 +7,7 @@ install:
 
 jobs:
   include:
-    - stage: "pylint"
-      script: PYTHONPATH=".:$PYTHONPATH" pylint
-    - stage: "pytest - 2020"
+    - stage: "lint"
+      script: PYTHONPATH=".:$PYTHONPATH" pylint adventofcode
+    - stage: "test"
       script: PYTHONPATH=".:$PYTHONPATH" pytest -v -n 4 adventofcode/tests/y2020
