@@ -1,7 +1,10 @@
 import os
 
 from functools import reduce
+
+
 from adventofcode.solutions.y2020.d03.part1 import parse_line, verify
+
 
 def main():
   the_map = []

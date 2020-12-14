@@ -1,6 +1,8 @@
 import os
 
+
 from adventofcode.solutions.y2020.d09.part1 import find_invalid_numer
+
 
 def find_sum_match(sum_count, sum_to_find, sequence):
   for start in range(0, len(sequence) - sum_count):
@@ -9,6 +11,7 @@ def find_sum_match(sum_count, sum_to_find, sequence):
       return subset_sequence
 
   return None
+
 
 def main():
   encryption_offset = 25
@@ -32,6 +35,7 @@ def main():
     sum_count += 1
 
   return max(result) + min(result)
+
 
 if __name__ == "__main__":
   print(main())

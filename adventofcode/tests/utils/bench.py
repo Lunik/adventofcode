@@ -1,6 +1,7 @@
 import time
 import warnings
 
+
 def calculate_duration(func):
   start = time.time()
   result = func()

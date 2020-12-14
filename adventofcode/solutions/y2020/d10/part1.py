@@ -1,5 +1,6 @@
 import os
 
+
 def main():
   adapters = []
   with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
@@ -21,6 +22,6 @@ def main():
 
   return jolts_diff[0] * jolts_diff[2]
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
   print(main())

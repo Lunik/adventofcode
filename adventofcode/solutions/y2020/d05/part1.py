@@ -2,8 +2,10 @@ import re
 import math
 import os
 
+
 def parse_seat(string):
   return re.match('([FB]{7})([LR]{3})', string).groups()
+
 
 def get_range(actions, some_range):
   if len(actions) == 0:
@@ -20,14 +22,17 @@ def get_range(actions, some_range):
 
   return return_value
 
+
 def get_seat_position(seat):
   row = get_range(list(seat[0][::-1]), range(128))
   column = get_range(list(seat[1][::-1]), range(8))
 
   return (row, column)
 
+
 def get_postion_id(position):
   return (position[0] * 8) + position[1]
+
 
 def main():
   seats_ids = []
@@ -41,6 +46,7 @@ def main():
       seats_ids.append(get_postion_id(position))
 
   return max(seats_ids)
+
 
 if __name__ == "__main__":
   print(main())

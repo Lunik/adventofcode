@@ -1,10 +1,12 @@
 import re
 import os
 
+
 def parse_line(line):
   groups = re.match('(\\w)(\\d+)', line).groups()
 
   return (groups[0], int(groups[1]))
+
 
 class Boat:
   def __init__(self, orientation):
@@ -43,6 +45,7 @@ class Boat:
   def debug(self):
     print(self.orientation, self.navigation)
 
+
 def main():
   boat = Boat('E')
 
@@ -52,6 +55,7 @@ def main():
       boat.exec_action(*action)
 
   return boat.get_distance()
+
 
 if __name__ == "__main__":
   print(main())

@@ -1,12 +1,14 @@
 import re
 import os
 
+
 def parse_contains(bags):
   bags = bags.strip()
   if bags == 'no other bags.':
     return []
 
   return re.match('(\\d+) ([\\w ]+) bags?', bags).groups()
+
 
 def parse_rule(line):
   data = line.split('contain')
@@ -17,6 +19,7 @@ def parse_rule(line):
 
   return (bag, contain)
 
+
 def count_bag(color, rules):
   res = sum(map(
     lambda rule: int(rule[0]) * count_bag(rule[1], rules) if \
@@ -25,6 +28,7 @@ def count_bag(color, rules):
     rules[color]))
 
   return res + 1
+
 
 def main():
   rules = dict()
@@ -37,6 +41,7 @@ def main():
   bag = 'shiny gold'
 
   return count_bag(bag, rules) - 1 # Remove the gold case from the count
+
 
 if __name__ == "__main__":
   print(main())

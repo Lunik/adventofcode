@@ -1,6 +1,8 @@
 import os
 
+
 from adventofcode.solutions.y2020.d08.part1 import run_program, parse_line
+
 
 def find_next_possible_corrupted_instruction(after, program):
   after += 1
@@ -9,6 +11,7 @@ def find_next_possible_corrupted_instruction(after, program):
 
   return after
 
+
 def fix_program(corrupted_instruction, program):
   program[corrupted_instruction] = (
     'jmp' if program[corrupted_instruction][0] == 'nop' else 'nop',
@@ -16,6 +19,7 @@ def fix_program(corrupted_instruction, program):
   )
 
   return program
+
 
 def main():
   orig_program = []
@@ -37,6 +41,6 @@ def main():
 
   return accumulator
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
   print(main())

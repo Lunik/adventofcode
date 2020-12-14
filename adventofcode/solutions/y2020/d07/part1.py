@@ -1,12 +1,14 @@
 import re
 import os
 
+
 def parse_contains(bags):
   bags = bags.strip()
   if bags == 'no other bags.':
     return []
 
   return re.match('(\\d+) ([\\w ]+) bags?', bags).groups()
+
 
 def parse_rule(line):
   data = line.split('contain')
@@ -18,6 +20,7 @@ def parse_rule(line):
   return (bag, contain)
 
 COUNTS = dict()
+
 
 def contain_color(color, rule, rules):
   if rule in COUNTS:
@@ -48,6 +51,7 @@ def contain_color(color, rule, rules):
   COUNTS[rule] = counts if len(counts) > 0 else None
   return COUNTS[rule]
 
+
 def sum_tree(tree):
   if isinstance(tree, int):
     return tree
@@ -56,6 +60,7 @@ def sum_tree(tree):
     return 0
 
   return sum(map(sum_tree, tree))
+
 
 def main():
   rules = dict()
@@ -74,6 +79,7 @@ def main():
       result += 1
 
   return result
+
 
 if __name__ == "__main__":
   print(main())

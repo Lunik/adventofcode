@@ -1,6 +1,8 @@
 import os
 
+
 from adventofcode.solutions.y2020.d05.part1 import parse_seat, get_seat_position
+
 
 def print_plane(plane):
   count = 0
@@ -8,6 +10,7 @@ def print_plane(plane):
   for row in plane:
     print(count, '\t', ' '.join(row))
     count += 1
+
 
 def main():
   plane = [['_' for colum in range(8)] for row in range(128)]
@@ -24,6 +27,7 @@ def main():
       plane[position[0]][position[1]] = "X"
 
   return plane
+
 
 if __name__ == "__main__":
   print(main())

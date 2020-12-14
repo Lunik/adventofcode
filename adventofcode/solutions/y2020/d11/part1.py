@@ -1,15 +1,19 @@
 import copy
 import os
 
+
 def parse_line(line):
   return list(line)
+
 
 def print_waiting_room(waiting_room):
   for row in waiting_room:
     print(''.join(row))
 
+
 def get_wr_size(waiting_room):
   return (len(waiting_room), len(waiting_room[0])) # y, x
+
 
 def define_next_seat_state(pos_x, pos_y, waiting_room, wr_size):
   seat_status = waiting_room[pos_y][pos_x]
@@ -44,6 +48,7 @@ def define_next_seat_state(pos_x, pos_y, waiting_room, wr_size):
 
   return return_value
 
+
 def count_seat(status, waiting_room, wr_size):
 
   count = 0
@@ -74,6 +79,7 @@ def resolve(waiting_room, funct):
 
   return count_seat("#", waiting_room, wr_size)
 
+
 def main():
   waiting_room = []
 
@@ -82,6 +88,7 @@ def main():
       waiting_room.append(parse_line(line.strip()))
 
   return resolve(waiting_room, define_next_seat_state)
+
 
 if __name__ == "__main__":
   print(main())

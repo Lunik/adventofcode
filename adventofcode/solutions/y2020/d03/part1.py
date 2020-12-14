@@ -12,11 +12,14 @@ def print_map(the_map):
     print(count, ''.join(line) + ''.join(line))
     count += 1
 
+
 def parse_line(line):
   return line.strip()
 
+
 def is_tree(case):
   return case == "#"
+
 
 def verify(the_map, moves): # moves = (x, y)
   map_height = len(the_map)
@@ -37,6 +40,7 @@ def verify(the_map, moves): # moves = (x, y)
 
   return count_tree
 
+
 def main():
   the_map = []
 
@@ -46,6 +50,7 @@ def main():
 
   #print_map(the_map)
   return verify(the_map, (3, 1))
+
 
 if __name__ == "__main__":
   print(main())

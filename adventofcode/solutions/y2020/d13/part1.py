@@ -1,5 +1,6 @@
 import os
 
+
 def parse_data(data):
   data = data.split('\n')
 
@@ -13,6 +14,7 @@ def parse_data(data):
 
   return bus_calendar
 
+
 class Bus:
   def __init__(self, schedule):
     self.schedule = schedule
@@ -23,6 +25,7 @@ class Bus:
 
   def debug(self):
     print('  Bus :', self.schedule, '\t', ' not' if not self.atStation else '', 'at station')
+
 
 class BusCalendar:
   def __init__(self, currentTimestamp):
@@ -49,6 +52,7 @@ class BusCalendar:
     for bus in self.buses:
       bus.debug()
 
+
 def main():
   with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
     bus_calendar = parse_data(file.read())
@@ -63,6 +67,7 @@ def main():
     #bus_calendar.debug()
 
   return (bus_calendar.currentTimestamp - start_time) * bus_found.schedule
+
 
 if __name__ == "__main__":
   print(main())

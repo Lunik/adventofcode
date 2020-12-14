@@ -1,5 +1,6 @@
 import os
 
+
 def parse_sequence(sequence):
   res_sequence = []
 
@@ -11,10 +12,12 @@ def parse_sequence(sequence):
 
   return res_sequence
 
+
 def parse_data(data):
   data = data.split('\n')
 
   return parse_sequence(data[1].split(','))
+
 
 def main():
   with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
@@ -35,6 +38,7 @@ def main():
     step *= bus_schedule # Make the step value a factor of the bu schedule
 
   return current_time
+
 
 # Notes :
 #   - For the first interation of the loop, we search for a time where bus[0] is at station

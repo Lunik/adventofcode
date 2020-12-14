@@ -1,5 +1,6 @@
 import os
 
+
 def verify(encryption_set, number):
   for num1 in encryption_set:
     for num2 in encryption_set:
@@ -7,6 +8,7 @@ def verify(encryption_set, number):
         return True
 
   return False
+
 
 def find_invalid_numer(encryption_offset, sequence):
   encryption_set = []
@@ -25,6 +27,7 @@ def find_invalid_numer(encryption_offset, sequence):
 
   return None
 
+
 def main():
   encryption_offset = 25
 
@@ -35,6 +38,7 @@ def main():
       sequence.append(int(line))
 
   return find_invalid_numer(encryption_offset, sequence)
+
 
 if __name__ == "__main__":
   print(main())

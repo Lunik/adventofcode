@@ -7,6 +7,7 @@ def verify(num1, num2):
 
   return None
 
+
 def main():
   numbers = []
 

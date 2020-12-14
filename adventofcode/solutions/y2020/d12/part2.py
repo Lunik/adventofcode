@@ -1,6 +1,8 @@
 import os
 
+
 from adventofcode.solutions.y2020.d12.part1 import parse_line, Boat
+
 
 class Boat2(Boat):
   def __init__(self, waypoint):
@@ -43,6 +45,7 @@ class Boat2(Boat):
   def debug(self):
     print(self.waypoint, self.navigation)
 
+
 def main():
   boat = Boat2(dict(
     N=1,
@@ -56,6 +59,7 @@ def main():
       boat.exec_action(*action)
 
   return boat.get_distance()
+
 
 if __name__ == "__main__":
   print(main())

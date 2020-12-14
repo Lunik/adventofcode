@@ -1,6 +1,8 @@
 import os
 
+
 from adventofcode.solutions.y2020.d02.part1 import parse_line
+
 
 def verify(policy, passwd):
   return policy[0][0] <= len(passwd) \
@@ -8,6 +10,7 @@ def verify(policy, passwd):
     and ( \
       (passwd[policy[0][0]-1] == policy[1]) \
       ^ (passwd[policy[0][1]-1] == policy[1])) # XOR
+
 
 def main():
   valid_tuples = 0
@@ -19,6 +22,7 @@ def main():
         valid_tuples += 1
 
   return valid_tuples
+
 
 if __name__ == "__main__":
   print(main())

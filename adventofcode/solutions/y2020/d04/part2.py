@@ -1,6 +1,8 @@
 import re
 import os
+
 from functools import reduce
+
 
 from adventofcode.solutions.y2020.d04.part1 import parse_file, is_valid
 

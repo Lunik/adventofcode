@@ -1,15 +1,19 @@
 import os
 
+
 def parse_line(line):
   data = line.split(' ')
 
   return (data[0], int(data[1].replace('+', '')))
 
+
 def handle_nop(pointer, accumulator, _):
   return (pointer + 1, accumulator)
 
+
 def handle_acc(pointer, accumulator, value):
   return (pointer + 1, accumulator + value)
+
 
 def handle_jmp(pointer, accumulator, value):
   return (pointer + value, accumulator)
@@ -18,6 +22,7 @@ ACTIONS = dict(
     nop=handle_nop,
     acc=handle_acc,
     jmp=handle_jmp)
+
 
 def run_program(program):
   pointer = 0
@@ -46,6 +51,7 @@ def main():
   _, accumulator, _ = run_program(program)
 
   return accumulator
+
 
 if __name__ == "__main__":
 

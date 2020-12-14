@@ -1,6 +1,8 @@
 import os
 
+
 from adventofcode.solutions.y2020.d11.part1 import parse_line, resolve
+
 
 def define_net_seat_state(pos_x, pos_y, waiting_room, wr_size):
   seat_status = waiting_room[pos_y][pos_x]
@@ -53,6 +55,7 @@ def define_net_seat_state(pos_x, pos_y, waiting_room, wr_size):
 
   return return_value
 
+
 def main():
   waiting_room = []
 
@@ -62,6 +65,6 @@ def main():
 
   return resolve(waiting_room, define_net_seat_state)
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
   print(main())

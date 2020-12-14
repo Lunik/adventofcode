@@ -1,9 +1,12 @@
 import os
 
+
 def is_valid(value, sequence):
   return value in sequence
 
+
 ALREADY_CHECKED_FROM = dict()
+
 
 def test_all_subsequences(start, sequence):
 
@@ -29,6 +32,7 @@ def test_all_subsequences(start, sequence):
 
   return valid_sequences
 
+
 def main():
   adapters = []
   with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
@@ -41,6 +45,7 @@ def main():
   adapters.append(adapters[len(adapters) - 1] + 3)
 
   return test_all_subsequences(0, adapters)
+
 
 if __name__ == "__main__":
   print(main())
