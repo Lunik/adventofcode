@@ -23,7 +23,7 @@
 | 07  | 01   | 0,10s user 0,02s system 94% cpu 0,122 total    |
 | 07  | 02   | 0,04s user 0,02s system 88% cpu 0,060 total    |
 |-----|------|------------------------------------------------|
-| 08  | 01   | 0,03s user 0,02s system 87% cpu 0,052 total    |
+| 08  | 01   | 0,03s user 0,02s system 87% cpu 0,052 total    |
 | 08  | 02   | 0,10s user 0,02s system 93% cpu 0,122 total    |
 |-----|------|------------------------------------------------|
 | 09  | 01   | 0,03s user 0,02s system 87% cpu 0,055 total    |
@@ -50,5 +50,5 @@
 | 16  | 01   | 0,03s user 0,02s system 86% cpu 0,052 total    |
 | 16  | 02   | 0,05s user 0,02s system 87% cpu 0,079 total    |
 |-----|------|------------------------------------------------|
-| 17  | 01   | 1,37s user 0,02s system 98% cpu 1,411 total    |
+| 17  | 01   | 1,37s user 0,02s system 98% cpu 1,411 total    |
 | 17  | 02   | 85,59s user 0,09s system 99% cpu 1:25,77 total |
