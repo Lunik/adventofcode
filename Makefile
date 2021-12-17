@@ -20,6 +20,8 @@ install: env
 env:
 	${PY} -m venv "${VENV}"
 
+all: test-2021 render lint
+
 render:
 	mkdir -p "${HTML_REPORT_PATH}" \
 	&& cp -r "${PROJECT_NAME}/${HTML_STATIC_PATH}"/* "${HTML_REPORT_PATH}/" \
