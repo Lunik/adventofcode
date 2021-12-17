@@ -35,7 +35,7 @@ def parse_data(data):
 
 
 def int_to_bin(number):
-  return "{0:036b}".format(number)
+  return f"{number:036b}"
 
 
 def bin_to_int(binary_string):
@@ -57,10 +57,10 @@ def calculate_value(mask, value):
 
 
 def main():
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     instructions = parse_data(file.read())
 
-  memory = dict()
+  memory = {}
 
   for instruction in instructions:
     for affectation in instruction[1]:

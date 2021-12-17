@@ -77,7 +77,7 @@ def passport_error_rate(rules, passport):
 
 
 def main():
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     rules, _, passports = parse_data(file.read())
 
   return sum(map(lambda p: passport_error_rate(rules, p), passports))

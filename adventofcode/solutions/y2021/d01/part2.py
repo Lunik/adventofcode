@@ -13,7 +13,7 @@ def main(window_size=3):
 
   window_1 = []
   window_2 = []
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     for line in file:
       current_number = int(line)
       if len(window_1) >= window_size:

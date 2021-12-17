@@ -24,7 +24,7 @@ def fix_program(corrupted_instruction, program):
 def main():
   orig_program = []
 
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     for line in file:
       orig_program.append(parse_line(line.strip()))
 

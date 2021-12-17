@@ -28,7 +28,7 @@ def verify(policy, passwd):
 def main():
   valid_tuples = 0
 
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     for line in file:
       res = parse_line(line)
       if verify(*res):

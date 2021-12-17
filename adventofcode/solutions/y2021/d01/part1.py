@@ -12,7 +12,7 @@ def main():
   counter = 0
 
   last_number = None
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     for line in file:
       current_number = int(line)
       if last_number is not None:

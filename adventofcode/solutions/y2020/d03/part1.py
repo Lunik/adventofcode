@@ -44,7 +44,7 @@ def verify(the_map, moves): # moves = (x, y)
 def main():
   the_map = []
 
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     for line in file:
       the_map.append(parse_line(line))
 

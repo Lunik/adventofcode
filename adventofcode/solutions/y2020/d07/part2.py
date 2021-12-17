@@ -31,9 +31,9 @@ def count_bag(color, rules):
 
 
 def main():
-  rules = dict()
+  rules = {}
 
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     for line in file:
       bag, contain = parse_rule(line.strip())
       rules[bag] = contain

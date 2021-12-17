@@ -19,7 +19,7 @@ def parse_rule(line):
 
   return (bag, contain)
 
-COUNTS = dict()
+COUNTS = {}
 
 
 def contain_color(color, rule, rules):
@@ -63,9 +63,9 @@ def sum_tree(tree):
 
 
 def main():
-  rules = dict()
+  rules = {}
 
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     for line in file:
       bag, contain = parse_rule(line.strip())
       rules[bag] = contain

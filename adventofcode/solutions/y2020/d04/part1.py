@@ -34,7 +34,7 @@ def verify(required_attr, ignore_attr, passports):
 
 
 def main():
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     passports = parse_file(file.read())
 
   valid_passports = verify(['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'], ['cid'], passports)

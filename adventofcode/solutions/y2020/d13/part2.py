@@ -20,7 +20,7 @@ def parse_data(data):
 
 
 def main():
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     sequence = parse_data(file.read())
 
   current_time = 0 # Begin at T = 1

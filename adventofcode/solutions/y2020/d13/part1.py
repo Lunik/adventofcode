@@ -28,8 +28,8 @@ class Bus:
 
 
 class BusCalendar:
-  def __init__(self, currentTimestamp):
-    self.currentTimestamp = currentTimestamp
+  def __init__(self, current_timestamp):
+    self.currentTimestamp = current_timestamp
     self.buses = []
 
   def register_bus(self, bus):
@@ -54,7 +54,7 @@ class BusCalendar:
 
 
 def main():
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     bus_calendar = parse_data(file.read())
 
   start_time = bus_calendar.currentTimestamp

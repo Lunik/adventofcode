@@ -3,7 +3,7 @@ import os
 
 def main():
   adapters = []
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     for line in file:
       adapters.append(int(line))
 

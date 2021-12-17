@@ -13,7 +13,7 @@ def advanced_filter(possible_attribute_positions, rules, passport):
 
 
 def main():
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     rules, my_passport, passports = parse_data(file.read())
 
   valid_passports = list(filter(lambda p: passport_error_rate(rules, p) == 0, passports))
@@ -21,7 +21,7 @@ def main():
   del rules['all']
 
   # At the begining, all attributes can be at all positions
-  possible_attribute_positions = dict()
+  possible_attribute_positions = {}
 
   for attr in rules:
     possible_attribute_positions[attr] = list(range(len(my_passport)))
@@ -34,7 +34,7 @@ def main():
     lambda a: 'departure' in a,
     possible_attribute_positions.keys()))
 
-  positions = dict()
+  positions = {}
 
   while len(positions.keys()) < len(rules.keys()):
     for attribute in set(possible_attribute_positions.keys()) ^ set(positions.keys()):

@@ -90,7 +90,7 @@ def main():
   size = (20, 20, 20)
   initial_dimension = generate_dimension(size)
 
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     initial_state = parse_data(size[1], size[2], file.read())
 
   initial_dimension[int(size[0]/2)] = initial_state

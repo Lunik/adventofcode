@@ -6,7 +6,7 @@ def parse_data(data):
 
 
 def play(number_list, until):
-  brain = dict()
+  brain = {}
   turn = 0
   last = None
   while turn < until:
@@ -36,7 +36,7 @@ def play(number_list, until):
 
 
 def main():
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     number_list = parse_data(file.read())
 
   return play(number_list, 2020)

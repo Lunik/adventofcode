@@ -24,7 +24,7 @@ def verify(groups):
 
 
 def main():
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     groups = parse_groups(file.read())
 
   return verify(groups)

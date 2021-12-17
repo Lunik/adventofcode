@@ -46,10 +46,10 @@ def calculate_value(mask, value):
 
 
 def main():
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     instructions = parse_data(file.read())
 
-  memory = dict()
+  memory = {}
 
   for instruction in instructions:
     for affectation in instruction[1]:
