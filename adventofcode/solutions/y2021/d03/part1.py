@@ -3,7 +3,8 @@ import os
 def main():
   data = []
 
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r') as file:
+  index = 0
+  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     data = list(file.readline()[:-1])
     for index, line in enumerate(file):
       data = [int(l1) + int(l2) for l1, l2 in zip(data, list(line))]

@@ -9,4 +9,4 @@ def test_part1():
 
 
 def test_part2():
-  assert calculate_duration(mainPart2) == "TODO"
+  assert calculate_duration(mainPart2) == 6085575
