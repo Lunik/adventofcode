@@ -1,3 +1,5 @@
+numpy
+
 pytest
 pytest-xdist
 pytest-html
