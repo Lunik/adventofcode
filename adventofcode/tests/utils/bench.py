@@ -3,9 +3,9 @@ import warnings
 
 
 def calculate_duration(func):
-  start = time.time()
+  start = time.perf_counter()
   result = func()
-  duration = time.time() - start
+  duration = time.perf_counter() - start
 
   if duration > 1:
     warnings.warn(
