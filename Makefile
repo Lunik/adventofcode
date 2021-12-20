@@ -25,7 +25,7 @@ all: test-2021 render lint
 render:
 	mkdir -p "${HTML_REPORT_PATH}" \
 	&& cp -r "${PROJECT_NAME}/${HTML_STATIC_PATH}"/* "${HTML_REPORT_PATH}/" \
-	&& for report in `ls ${HTML_REPORT_PATH} | grep report`; do sed -i .tmp -e 's/^\(.*<\/ul>\)/    <li><a href="'$${report}'">'$${report}'<\/a><\li>\n\1/' "${HTML_REPORT_PATH}/index.html"; done \
+	&& for report in `ls ${HTML_REPORT_PATH} | grep report`; do sed -i .tmp -e 's/^\(.*<\/ul>\)/    <li><a href="'$${report}'">'$${report}'<\/a><\/li>\n\1/' "${HTML_REPORT_PATH}/index.html"; done \
 	&& rm "${HTML_REPORT_PATH}"/*.tmp \
 	&& echo open "${HTML_REPORT_PATH}/index.html"
 
