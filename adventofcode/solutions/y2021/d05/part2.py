@@ -1,4 +1,6 @@
 import os
+import cProfile
+import pstats
 
 from functools import reduce
 
@@ -9,10 +11,11 @@ def main():
   with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
     vectors = parse(file.readlines())
 
-
   #vectors = filter(lambda v: v[0][0] == v[1][0] or v[0][1] == v[1][1], vectors)
 
-  lines = reduce(lambda a, b: a + b, [calculate_line(vector) for vector in vectors])
+  lines = []
+  for vector in vectors:
+    calculate_line(vector, lines)
 
   counter = {}
   for point in lines:
@@ -26,4 +29,9 @@ def main():
 
 
 if __name__ == "__main__":
-  print(main())
+  with cProfile.Profile() as pr:
+    print(main())
+
+  stats = pstats.Stats(pr)
+  stats.sort_stats(pstats.SortKey.TIME)
+  stats.print_stats()
