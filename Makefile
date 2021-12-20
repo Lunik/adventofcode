@@ -12,7 +12,7 @@ HTML_STATIC_PATH = static
 HTML_REPORT_PATH = docs
 
 PYLINT_OPTS = --extension-pkg-allow-list="math"
-
+PYTEST_OPTS = --durations=0 -v -n 4 --color=yes
 
 install: env
 	${VENV_PY} -m pip install -r "${REQUIREMENTS}"
@@ -35,22 +35,22 @@ lint:
 	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYLINT} ${PYLINT_OPTS} "${PROJECT_NAME}"
 
 test-2021:
-	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} -v -n 4 --color=yes --html="${HTML_REPORT_PATH}/report-2021.html" "${PROJECT_NAME}/tests/y2021"
+	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} ${PYTEST_OPTS} --html="${HTML_REPORT_PATH}/report-2021.html" "${PROJECT_NAME}/tests/y2021"
 
 test-2020:
-	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} -v -n 4 --color=yes --html="${HTML_REPORT_PATH}/report-2020.html" "${PROJECT_NAME}/tests/y2020"
+	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} ${PYTEST_OPTS} --html="${HTML_REPORT_PATH}/report-2020.html" "${PROJECT_NAME}/tests/y2020"
 
 test-2019:
-	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} -v -n 4 --color=yes --html="${HTML_REPORT_PATH}/report-2019.html" "${PROJECT_NAME}/tests/y2019"
+	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} ${PYTEST_OPTS} --html="${HTML_REPORT_PATH}/report-2019.html" "${PROJECT_NAME}/tests/y2019"
 
 test-2018:
-	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} -v -n 4 --color=yes --html="${HTML_REPORT_PATH}/report-2018.html" "${PROJECT_NAME}/tests/y2018"
+	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} ${PYTEST_OPTS} --html="${HTML_REPORT_PATH}/report-2018.html" "${PROJECT_NAME}/tests/y2018"
 
 test-2017:
-	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} -v -n 4 --color=yes --html="${HTML_REPORT_PATH}/report-2017.html" "${PROJECT_NAME}/tests/y2017"
+	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} ${PYTEST_OPTS} --html="${HTML_REPORT_PATH}/report-2017.html" "${PROJECT_NAME}/tests/y2017"
 
 test-2016:
-	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} -v -n 4 --color=yes --html="${HTML_REPORT_PATH}/report-2016.html" "${PROJECT_NAME}/tests/y2016"
+	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} ${PYTEST_OPTS} --html="${HTML_REPORT_PATH}/report-2016.html" "${PROJECT_NAME}/tests/y2016"
 
 test-2015:
-	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} -v -n 4 --color=yes --html="${HTML_REPORT_PATH}/report-2015.html" "${PROJECT_NAME}/tests/y2015"
+	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} ${PYTEST_OPTS} --html="${HTML_REPORT_PATH}/report-2015.html" "${PROJECT_NAME}/tests/y2015"
