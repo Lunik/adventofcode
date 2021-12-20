@@ -1,4 +1,7 @@
 import os
+import cProfile
+import pstats
+
 
 def calculate(the_list, index, keep_max=False):
   counter = 0
@@ -64,4 +67,9 @@ def main():
 
 
 if __name__ == "__main__":
-  print(main())
+  with cProfile.Profile() as pr:
+    print(main())
+
+  stats = pstats.Stats(pr)
+  stats.sort_stats(pstats.SortKey.TIME)
+  stats.print_stats()
