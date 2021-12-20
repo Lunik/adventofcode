@@ -1,4 +1,6 @@
 import os
+import cProfile
+import pstats
 
 from functools import reduce
 
@@ -33,8 +35,8 @@ def vector_equal(vector_a, vector_b):
   return vector_a[0] == vector_b[0] and vector_a[1] == vector_b[1]
 
 
-def calculate_line(vector):
-  points = [vector[0]]
+def calculate_line(vector, points):
+  points.append(vector[0])
   step_x = compare(vector[0][0], vector[1][0])
   step_y = compare(vector[0][1], vector[1][1])
 
@@ -44,8 +46,6 @@ def calculate_line(vector):
     points.append(new_point)
     last_point = new_point
 
-  return points
-
 
 def main():
   with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
@@ -54,7 +54,9 @@ def main():
 
   vectors = filter(lambda v: v[0][0] == v[1][0] or v[0][1] == v[1][1], vectors)
 
-  lines = reduce(lambda a, b: a + b, [calculate_line(vector) for vector in vectors])
+  lines = []
+  for vector in vectors:
+    calculate_line(vector, lines)
 
   counter = {}
   for point in lines:
@@ -68,4 +70,9 @@ def main():
 
 
 if __name__ == "__main__":
-  print(main())
+  with cProfile.Profile() as pr:
+    print(main())
+
+  stats = pstats.Stats(pr)
+  stats.sort_stats(pstats.SortKey.TIME)
+  stats.print_stats()
