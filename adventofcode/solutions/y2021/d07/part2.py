@@ -2,12 +2,23 @@ import os
 import cProfile
 import pstats
 
+from adventofcode.solutions.y2021.d07.part1 import parse, align
+
+
+def fuel_calculator(hight, target):
+  diff = abs(hight-target)
+  return diff*(diff+1)/2
+
+
 def main():
   with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
-    for line in file:
-      print(line)
+    data = file.read()
 
-  return "TODO"
+  crabs = parse(data)
+
+  fuel, _ = align(fuel_calculator, crabs)
+
+  return int(fuel)
 
 
 if __name__ == "__main__":
