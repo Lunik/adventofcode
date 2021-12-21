@@ -1,5 +1,7 @@
 # adventofcode
 
+[![Tests](https://github.com/Lunik/adventofcode/actions/workflows/tests.yml/badge.svg)](https://github.com/Lunik/adventofcode/actions/workflows/tests.yml)
+
 [Tests & performance report](https://lunik.github.io/adventofcode/)
 
 [Challenge source](https://adventofcode.com/) or [Challenge markdown](./adventofcode/challenges)
