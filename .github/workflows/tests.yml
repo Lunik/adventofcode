@@ -1,0 +1,35 @@
+
+name: "Tests"
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ master ]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    strategy:
+      fail-fast: false
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup Python
+      uses: actions/setup-python@v2.3.1
+
+    - name: Install requirements
+      run: make install
+
+    - name: Lint
+      run: make lint
+
+    - name: Launch tests
+      run: make test
