@@ -4,7 +4,7 @@
 
 [Tests & performance report](https://lunik.github.io/adventofcode/)
 
-[Challenge source](https://adventofcode.com/) or [Challenge markdown](./adventofcode/challenges)
+[Challenge source](https://adventofcode.com/)
 
 ## Setup
 
