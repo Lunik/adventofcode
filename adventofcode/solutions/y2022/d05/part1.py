@@ -22,10 +22,7 @@ def parse(file):
 
     if part == 0:
       x = 1
-      row = []
-      while x < len(line):
-        row.append(line[x] if line[x] != ' ' else None)
-        x += 4
+      row = list(map(lambda x: x if x != ' ' else None, line[1::4]))
       matrix.append(row)
 
     if part == 2:
@@ -48,9 +45,9 @@ def parse(file):
 def solve(matrix, instructions):
 
   for count, from_tower, to_tower in instructions:
-    buffer = []
-    for x in range(count):
-      buffer.append(matrix[from_tower-1].pop())
+    buffer = matrix[from_tower-1][-count:]
+    buffer.reverse()
+    matrix[from_tower-1] = matrix[from_tower-1][:-count]
 
     matrix[to_tower-1] += buffer
 

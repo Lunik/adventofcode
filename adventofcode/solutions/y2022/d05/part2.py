@@ -7,11 +7,8 @@ from adventofcode.solutions.y2022.d05.part1 import parse
 def solve(matrix, instructions):
 
   for count, from_tower, to_tower in instructions:
-    buffer = []
-    for x in range(count):
-      buffer.append(matrix[from_tower-1].pop())
-
-    buffer.reverse()
+    buffer = matrix[from_tower-1][-count:]
+    matrix[from_tower-1] = matrix[from_tower-1][:-count]
 
     matrix[to_tower-1] += buffer
 
