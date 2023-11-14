@@ -20,7 +20,7 @@ install: env
 env:
 	${PY} -m venv "${VENV}"
 
-all: test-2022 render lint
+all: test-2023 render lint
 
 render:
 	mkdir -p "${HTML_REPORT_PATH}" \
@@ -29,10 +29,13 @@ render:
 	&& rm "${HTML_REPORT_PATH}"/*.tmp \
 	&& echo open "${HTML_REPORT_PATH}/index.html"
 
-test: test-2015 test-2016 test-2017 test-2018 test-2019 test-2020 test-2021 test-2022
+test: test-2015 test-2016 test-2017 test-2018 test-2019 test-2020 test-2021 test-2022 test-2023
 
 lint:
 	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYLINT} ${PYLINT_OPTS} "${PROJECT_NAME}"
+
+test-2023:
+	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} ${PYTEST_OPTS} --html="${HTML_REPORT_PATH}/report-2023.html" "${PROJECT_NAME}/tests/y2023"
 
 test-2022:
 	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} ${PYTEST_OPTS} --html="${HTML_REPORT_PATH}/report-2022.html" "${PROJECT_NAME}/tests/y2022"
