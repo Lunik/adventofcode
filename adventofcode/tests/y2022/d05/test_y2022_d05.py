@@ -5,8 +5,8 @@ from adventofcode.solutions.y2022.d05.part2 import main as mainPart2
 
 
 def test_part1():
-  assert calculate_duration(mainPart1) == "QMBMJDFTD"
+    assert calculate_duration(mainPart1) == "QMBMJDFTD"
 
 
 def test_part2():
-  assert calculate_duration(mainPart2) == "NBTVTJNFJ"
+    assert calculate_duration(mainPart2) == "NBTVTJNFJ"

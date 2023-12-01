@@ -2,42 +2,44 @@ import os
 
 
 def parse_sequence(sequence):
-  res_sequence = []
+    res_sequence = []
 
-  for index, element in enumerate(sequence):
-    if element == 'x':
-      continue
+    for index, element in enumerate(sequence):
+        if element == "x":
+            continue
 
-    res_sequence.append((int(element), int(index)))
+        res_sequence.append((int(element), int(index)))
 
-  return res_sequence
+    return res_sequence
 
 
 def parse_data(data):
-  data = data.split('\n')
+    data = data.split("\n")
 
-  return parse_sequence(data[1].split(','))
+    return parse_sequence(data[1].split(","))
 
 
 def main():
-  with open(os.path.join(os.path.dirname(__file__), 'input.txt'), 'r', encoding='UTF-8') as file:
-    sequence = parse_data(file.read())
+    with open(
+        os.path.join(os.path.dirname(__file__), "input.txt"), "r", encoding="UTF-8"
+    ) as file:
+        sequence = parse_data(file.read())
 
-  current_time = 0 # Begin at T = 1
-  step = 1         # Increate time by step value
+    current_time = 0  # Begin at T = 1
+    step = 1  # Increate time by step value
 
-  # For all buses
-  for bus_schedule, bus_offset in sequence:
-    # Find time where this bus arrives at station
-    # Bus must be decaled in time based on theire position \
-    # in the list so we add offset to the current time
-    while (current_time + bus_offset) % bus_schedule != 0:
-      # while not at station increase time by the step value
-      current_time += step
+    # For all buses
+    for bus_schedule, bus_offset in sequence:
+        # Find time where this bus arrives at station
+        # Bus must be decaled in time based on theire position \
+        # in the list so we add offset to the current time
+        while (current_time + bus_offset) % bus_schedule != 0:
+            # while not at station increase time by the step value
+            current_time += step
 
-    step *= bus_schedule # Make the step value a factor of the bu schedule
+        step *= bus_schedule  # Make the step value a factor of the bu schedule
 
-  return current_time
+    return current_time
 
 
 # Notes :
@@ -53,4 +55,4 @@ def main():
 #   - We do that for all buses
 #     - At the end we should find a time where all the buses are at station
 if __name__ == "__main__":
-  print(main())
+    print(main())

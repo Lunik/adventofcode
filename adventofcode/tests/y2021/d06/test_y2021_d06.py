@@ -5,8 +5,8 @@ from adventofcode.solutions.y2021.d06.part2 import main as mainPart2
 
 
 def test_part1():
-  assert calculate_duration(mainPart1) == 388739
+    assert calculate_duration(mainPart1) == 388739
 
 
 def test_part2():
-  assert calculate_duration(mainPart2) == 1741362314973
+    assert calculate_duration(mainPart2) == 1741362314973
