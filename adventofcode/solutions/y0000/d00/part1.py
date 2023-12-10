@@ -4,8 +4,12 @@ import pstats
 
 
 def parse(file):
+    data = []
+
     for line in file:
-        print(line.strip("\n"))
+        data.append(line.strip("\n"))
+
+    return data
 
 
 def main():

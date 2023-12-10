@@ -25,7 +25,6 @@ class ExpectingChar(Exception):
 
 def check_line(line):
     counter = ""
-    # print(f"\nline: {line}")
     for char in list(line):
         if char in "({[<":
             counter += char
@@ -43,10 +42,8 @@ def solve(line):
     try:
         check_line(line)
     except ExpectingChar as _:
-        # print(_)
         return INVALID_CHAR_POINTS[_.char]
 
-    # print("is valid")
     return 0
 
 

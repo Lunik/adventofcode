@@ -3,7 +3,7 @@ import cProfile
 import pstats
 from copy import copy
 
-from adventofcode.solutions.y2022.d14.part1 import parse, print_data
+from adventofcode.solutions.y2022.d14.part1 import parse
 
 
 def check_move(sand, data, floor):

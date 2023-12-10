@@ -22,13 +22,6 @@ def parse_data(y_len, x_len, data):
     return first_slice
 
 
-def print_dimension(dimension):
-    for pos_z, dimension_z in enumerate(dimension):
-        print("z=", pos_z)
-        for _, dimension_y in enumerate(dimension_z):
-            print(" ".join(dimension_y))
-
-
 def find_neighbors(position, dimension):
     neighbors = []
 

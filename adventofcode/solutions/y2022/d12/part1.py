@@ -88,11 +88,6 @@ def find_path(matrix, start, end):
                     q.put((new_path_distange, (new_path_distange, neighbor)))
 
 
-def print_matrix(matrix):
-    for line in matrix:
-        print("".join(line))
-
-
 def main():
     with open(
         os.path.join(os.path.dirname(__file__), "input.txt"), "r", encoding="UTF-8"

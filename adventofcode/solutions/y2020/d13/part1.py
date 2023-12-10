@@ -23,15 +23,6 @@ class Bus:
     def move(self, timestamp):
         self.atStation = (timestamp % self.schedule) == 0
 
-    def debug(self):
-        print(
-            "  Bus :",
-            self.schedule,
-            "\t",
-            " not" if not self.atStation else "",
-            "at station",
-        )
-
 
 class BusCalendar:
     def __init__(self, current_timestamp):
@@ -53,11 +44,6 @@ class BusCalendar:
 
         return None
 
-    def debug(self):
-        print("Timestamp", self.currentTimestamp)
-        for bus in self.buses:
-            bus.debug()
-
 
 def main():
     with open(
@@ -71,8 +57,6 @@ def main():
     while bus_found is None:
         bus_calendar.wait_next_timestamp()
         bus_found = bus_calendar.find_bus()
-
-        # bus_calendar.debug()
 
     return (bus_calendar.currentTimestamp - start_time) * bus_found.schedule
 

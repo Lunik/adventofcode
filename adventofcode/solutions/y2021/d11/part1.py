@@ -12,11 +12,6 @@ def parse(file):
     return data
 
 
-def print_grid(grid):
-    for line in grid:
-        print(" ".join([str(x) for x in line]))
-
-
 def charge_octopus(grid):
     for idy, line in enumerate(grid):
         for idx, _ in enumerate(line):

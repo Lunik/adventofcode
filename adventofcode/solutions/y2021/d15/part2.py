@@ -2,7 +2,7 @@ import os
 import cProfile
 import pstats
 
-from adventofcode.solutions.y2021.d15.part1 import find_path, print_matrix
+from adventofcode.solutions.y2021.d15.part1 import find_path
 
 
 def parse(file):

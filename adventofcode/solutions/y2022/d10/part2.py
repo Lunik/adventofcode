@@ -36,9 +36,6 @@ def main():
 
     result = solve(data)
 
-    for line in result:
-        print("".join(line))
-
     return result
 
 

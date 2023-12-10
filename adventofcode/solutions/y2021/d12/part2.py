@@ -4,7 +4,7 @@ import pstats
 import re
 from copy import copy
 
-from adventofcode.solutions.y2021.d12.part1 import parse, debug_cave
+from adventofcode.solutions.y2021.d12.part1 import parse
 
 
 def find_path(cave, selected_small_cave, node="start", path=[]):

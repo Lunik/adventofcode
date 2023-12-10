@@ -23,11 +23,6 @@ def parse(file):
     return cave
 
 
-def debug_cave(cave):
-    for node, neighbors in cave.items():
-        print(node, neighbors)
-
-
 def find_path(cave, node="start", path=[]):
     p = copy(path)
     p.append(node)
@@ -69,8 +64,6 @@ def main():
         os.path.join(os.path.dirname(__file__), "input.txt"), "r", encoding="UTF-8"
     ) as file:
         cave = parse(file)
-
-    # debug_cave(cave)
 
     res = find_path(cave)
 

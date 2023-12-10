@@ -8,14 +8,6 @@ from adventofcode.solutions.y2020.d05.part1 import (
 )
 
 
-def print_plane(plane):
-    count = 0
-    print("\t", "0 1 2 3 4 5 6 7")
-    for row in plane:
-        print(count, "\t", " ".join(row))
-        count += 1
-
-
 def find_seat(plane):
     for row in range(1, 128):
         for column in range(1, 8):

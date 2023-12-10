@@ -7,11 +7,6 @@ def parse(file):
     return [list(line.rstrip("\n")) for line in file]
 
 
-def debug_grid(grid):
-    for line in grid:
-        print(" ".join(line))
-
-
 def get_neighbour(position):
     return [
         (position[0] - 1, position[1]),

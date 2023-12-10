@@ -6,11 +6,6 @@ def parse_line(line):
     return list(line)
 
 
-def print_waiting_room(waiting_room):
-    for row in waiting_room:
-        print("".join(row))
-
-
 def get_wr_size(waiting_room):
     return (len(waiting_room), len(waiting_room[0]))  # y, x
 

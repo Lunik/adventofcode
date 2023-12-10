@@ -73,22 +73,6 @@ def solve(data, start):
     return sand_count
 
 
-def print_data(data):
-    range_x = [p[0] for p in data.keys()]
-    range_y = [p[1] for p in data.keys()]
-
-    for y in range(min(range_y), max(range_y) + 1):
-        line = []
-
-        for x in range(min(range_x), max(range_x) + 1):
-            if (x, y) in data:
-                line.append(data[(x, y)])
-            else:
-                line.append(".")
-
-        print("".join(line))
-
-
 def main():
     with open(
         os.path.join(os.path.dirname(__file__), "input.txt"), "r", encoding="UTF-8"

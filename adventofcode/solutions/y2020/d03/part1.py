@@ -7,13 +7,6 @@ import os
 # l______> x
 
 
-def print_map(the_map):
-    count = 0
-    for line in the_map:
-        print(count, "".join(line) + "".join(line))
-        count += 1
-
-
 def parse_line(line):
     return line.strip()
 
@@ -51,7 +44,6 @@ def main():
         for line in file:
             the_map.append(parse_line(line))
 
-    # print_map(the_map)
     return verify(the_map, (3, 1))
 
 

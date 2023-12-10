@@ -37,7 +37,6 @@ def find_digits_string(digits, sequences):
 
 
 def solve(sequence):
-    # print("solve ==>", sequence)
     digits = {
         0: None,
         1: None,

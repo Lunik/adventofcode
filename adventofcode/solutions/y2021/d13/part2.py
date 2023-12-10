@@ -2,7 +2,7 @@ import os
 import cProfile
 import pstats
 
-from adventofcode.solutions.y2021.d13.part1 import parse, fold, count_dots, print_matrix
+from adventofcode.solutions.y2021.d13.part1 import parse, fold, count_dots
 
 
 def main():
@@ -13,9 +13,6 @@ def main():
 
     for line, value in fold_instructions:
         matrix = fold(matrix, line, value)
-
-    print("")
-    print_matrix(matrix)
 
     return matrix
 

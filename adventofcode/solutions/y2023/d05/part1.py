@@ -89,16 +89,11 @@ def range_fully_in_range_reverse(range1, range2):
 
 def solve(seeds, maps):
     for map_name, map_data in maps.items():
-        print("\n\n===========", map_name, "===========\n\n")
         updated_seeds = []
-        print("All seeds :", seeds)
         for data_range in map_data:
-            print("\n\tData range :", data_range)
             leftover_seeds = []
             for seed_range in seeds:
-                print("\n\t\tSeed range :", seed_range)
                 if range_fully_in_range(seed_range, data_range["source_range"]):
-                    print("\t\t\tFully in range")
                     updated_seeds.append(
                         range(
                             (seed_range.start - data_range["source"])
@@ -107,10 +102,10 @@ def solve(seeds, maps):
                             + data_range["destination"],
                         )
                     )
+
                 elif range_fully_in_range_reverse(
                     seed_range, data_range["source_range"]
                 ):
-                    print("\t\t\tFully in range reverse")
                     leftover_seeds.append(
                         range(seed_range.start, data_range["source_range"].start - 1)
                     )
@@ -125,10 +120,10 @@ def solve(seeds, maps):
                     leftover_seeds.append(
                         range(data_range["source_range"].stop + 1, seed_range.stop)
                     )
+
                 elif range_partially_right_in_range(
                     seed_range, data_range["source_range"]
                 ):
-                    print("\t\t\tPartially right in range")
                     leftover_seeds.append(
                         range(seed_range.start, data_range["source_range"].start - 1)
                     )
@@ -140,10 +135,10 @@ def solve(seeds, maps):
                             + data_range["destination"],
                         )
                     )
+
                 elif range_partially_left_in_range(
                     seed_range, data_range["source_range"]
                 ):
-                    print("\t\t\tPartially left in range")
                     updated_seeds.append(
                         range(
                             (seed_range.start - data_range["source"])
@@ -155,14 +150,13 @@ def solve(seeds, maps):
                     leftover_seeds.append(
                         range(data_range["source_range"].stop + 1, seed_range.stop)
                     )
+
                 else:
-                    print("\t\t\tNot in range")
                     leftover_seeds.append(seed_range)
             seeds = leftover_seeds
 
         seeds = updated_seeds + leftover_seeds
 
-    print(seeds)
     return min([x.start for x in seeds])
 
 

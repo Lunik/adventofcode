@@ -39,9 +39,6 @@ class Boat:
             self.navigation["E"] - self.navigation["W"]
         )
 
-    def debug(self):
-        print(self.orientation, self.navigation)
-
 
 def main():
     boat = Boat("E")

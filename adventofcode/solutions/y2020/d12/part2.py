@@ -42,9 +42,6 @@ class Boat2(Boat):
             for direction in self.waypoint.keys():
                 self.navigation[direction] += self.waypoint[direction] * value
 
-    def debug(self):
-        print(self.waypoint, self.navigation)
-
 
 def main():
     boat = Boat2(dict(N=1, E=10, S=0, W=0))

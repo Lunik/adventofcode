@@ -31,13 +31,6 @@ def parse(data):
     return winning_numbers, grids
 
 
-def debug_grid(grid):
-    print("=======")
-    for line in grid:
-        print(line)
-    print("=======")
-
-
 def check_number(grid, number):
     for line in grid:
         for current_number in filter(

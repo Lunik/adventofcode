@@ -16,13 +16,6 @@ def parse(file):
     return matrix
 
 
-def print_matrix(matrix):
-    m = deepcopy(matrix)
-
-    for line in m:
-        print("".join(map(str, line)))
-
-
 def get_neighbors(pos, maxs):
     neighbors = list(
         filter(

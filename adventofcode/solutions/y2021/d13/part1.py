@@ -56,11 +56,6 @@ def fold(matrix, line, value):
     return new_matrix
 
 
-def print_matrix(matrix):
-    for line in matrix:
-        print("".join(["#" if x else " " for x in line]))
-
-
 def count_dots(matrix):
     return sum(map(sum, matrix))
 

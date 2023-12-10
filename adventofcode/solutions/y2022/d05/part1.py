@@ -62,11 +62,6 @@ def solve(matrix, instructions):
     return res
 
 
-def print_matrix(matrix):
-    for row in matrix:
-        print(" ".join(row))
-
-
 def main():
     with open(
         os.path.join(os.path.dirname(__file__), "input.txt"), "r", encoding="UTF-8"

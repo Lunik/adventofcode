@@ -18,7 +18,6 @@ class MissingChars(Exception):
 
 def check_line(line):
     counter = []
-    # print(f"\nline: {line}")
     for char in list(line):
         if char in "({[<":
             counter += char
@@ -46,10 +45,8 @@ def solve(line):
     try:
         check_line(line)
     except ExpectingChar as _:
-        # print(_)
         pass
     except MissingChars as _:
-        # print(_)
         for char in _.chars:
             result = (result * 5) + MISSING_CHAR_POINTS[char]
 

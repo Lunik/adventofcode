@@ -44,13 +44,6 @@ def parse(file):
     return tree
 
 
-def print_tree(tree, prof=0):
-    print("  " * prof, tree[1], tree[2])
-    if tree[0] == "d":
-        for child in tree[3]:
-            print_tree(child, prof + 1)
-
-
 def get_size(tree):
     if tree[0] == "f":
         return tree[2]
